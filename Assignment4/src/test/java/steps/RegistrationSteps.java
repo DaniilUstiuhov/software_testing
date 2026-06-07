@@ -68,7 +68,7 @@ public class RegistrationSteps {
 
     @And("Users click Submit button")
     public void clickSubmit() {
-        driver.findElement(By.cssSelector("button[type='submit']")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
     }
 
     @After
