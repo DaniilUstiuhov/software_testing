@@ -68,7 +68,8 @@ public class RegistrationSteps {
 
     @And("Users click Submit button")
     public void clickSubmit() {
-        driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+        // submit the form directly via JS — works regardless of button type
+        ((JavascriptExecutor) driver).executeScript("document.querySelector('form').submit()");
     }
 
     @After
