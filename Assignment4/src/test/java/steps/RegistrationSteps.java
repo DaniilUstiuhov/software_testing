@@ -81,7 +81,10 @@ public class RegistrationSteps {
 
     @And("Users click Submit button")
     public void clickSubmit() {
-        driver.findElement(By.cssSelector("button.btn-primary")).click();
+        // click the last button on the page (the Login/Submit button)
+        WebElement btn = driver.findElements(By.tagName("button"))
+                               .stream().reduce((a, b) -> b).orElseThrow();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click()", btn);
     }
 
     @After
