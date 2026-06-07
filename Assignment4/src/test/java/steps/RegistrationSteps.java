@@ -70,6 +70,8 @@ public class RegistrationSteps {
     @And("Users select state {string}")
     public void selectState(String state) {
         new Select(driver.findElement(By.id("state"))).selectByVisibleText(state);
+        // wait for city dropdown to load
+        try { Thread.sleep(1000); } catch (InterruptedException ignored) {}
     }
 
     @And("Users select city {string}")

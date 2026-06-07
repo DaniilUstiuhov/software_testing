@@ -12,5 +12,5 @@ Feature: Student Registration Form Automation
     And Users select hobby "Sports"
     And Users enter current address "123 Main Street, City"
     And Users select state "NCR"
-    And Users select city "Delhi"
+    And Users select city "Agra"
     And Users click Submit button
