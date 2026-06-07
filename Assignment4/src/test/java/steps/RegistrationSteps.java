@@ -5,6 +5,7 @@ import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import java.time.Duration;
 
 public class RegistrationSteps {
@@ -66,10 +67,19 @@ public class RegistrationSteps {
         driver.findElement(By.cssSelector("textarea")).sendKeys(address);
     }
 
+    @And("Users select state {string}")
+    public void selectState(String state) {
+        new Select(driver.findElement(By.id("state"))).selectByVisibleText(state);
+    }
+
+    @And("Users select city {string}")
+    public void selectCity(String city) {
+        new Select(driver.findElement(By.id("city"))).selectByVisibleText(city);
+    }
+
     @And("Users click Submit button")
     public void clickSubmit() {
-        // submit the form directly via JS — works regardless of button type
-        ((JavascriptExecutor) driver).executeScript("document.querySelector('form').submit()");
+        driver.findElement(By.cssSelector("button.btn-primary")).click();
     }
 
     @After

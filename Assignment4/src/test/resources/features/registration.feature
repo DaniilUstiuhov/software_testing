@@ -7,8 +7,10 @@ Feature: Student Registration Form Automation
     And Users enter email "daniil@example.com"
     And Users select gender "Male"
     And Users enter mobile number "1234567890"
-    And Users enter date of birth "2000-01-15"
+    And Users enter date of birth "2004-09-28"
     And Users enter subject "Computer Science"
     And Users select hobby "Sports"
     And Users enter current address "123 Main Street, City"
+    And Users select state "NCR"
+    And Users select city "Delhi"
     And Users click Submit button
